@@ -19,3 +19,4 @@ def verify_signature():
         print("Signature is valid.")
     else:
         print("Signature is invalid.")
+verify_signature()
