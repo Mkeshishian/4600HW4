@@ -6,4 +6,4 @@
 
 # Task 2
 
-![image](https://user-images.githubusercontent.com/89661528/233740685-236a1045-949f-4deb-b846-160ca87567ba.png)
+![image](https://user-images.githubusercontent.com/89661528/233752185-e2cf2f60-e37d-42c4-93b0-5d15313a3240.png)
