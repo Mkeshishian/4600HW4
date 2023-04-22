@@ -1,24 +1,29 @@
 from Crypto.Util.number import *
 import binascii
 
+# Define function to encrypt message using RSA
+def encrypt(message, e, n):
+    # Convert message to hex string
+    message_hex = binascii.hexlify(message.encode()).decode()
+
+    # Convert hex string to BIGNUM
+    m = int(message_hex, 16)
+
+    # Encrypt using the public key
+    c = pow(m, e, n)
+
+    # Return ciphertext
+    return c
+
 # Public key
 e = 65537
-n = 226582599423272186758101375008313514163
+n = 0xDCBFFE3E51F62E09CE7032E2677A78946A849DC4CDDE3A4D0CB81629242FB1A5
 
-# Convert message to bytes and then to hex
+# Message to encrypt
 message = "A top secret!"
-message_bytes = message.encode('utf-8')
-message_hex = binascii.hexlify(message_bytes).decode('utf-8')
 
-# Convert hex string to integer
-m = int(message_hex, 16)
-
-# Encrypt using the public key
-c = pow(m, e, n)
-
-# Convert ciphertext to hex string
-ciphertext_hex = hex(c)[2:]
+# Encrypt message using RSA
+ciphertext = encrypt(message, e, n)
 
 # Print ciphertext
-print("Ciphertext:", ciphertext_hex)
-
+print("Ciphertext:", hex(ciphertext))
